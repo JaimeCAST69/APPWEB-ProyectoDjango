@@ -11,7 +11,7 @@
     <div class="d-flex justify-content-center align-items-center min-vh-100">
         <div class="card p-4" style="width: 100%; max-width: 500px;">
             <h2 class="text-center mb-4">Registro de Usuario</h2>
-            <form method="post" onsubmit="return validateForm()">
+            <form method="post" onsubmit="return validateForm()" novalidate>
                 {% csrf_token %}
                 <div class="mb-3">
                     {{ form.as_p }}
