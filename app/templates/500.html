@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 500 - Error Interno del Servidor</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            text-align: center;
+        }
+        .container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .message {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .button {
+            margin-top: 20px;
+        }
+        .button a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="data:image/jpeg;base64,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" alt="Error 500">
+        <div class="message">Oops, ha ocurrido un error con nuestros servidores, por favor inténtalo más tarde.</div>
+        <div class="button">
+            <a href="/">Volver al inicio</a>
+        </div>
+    </div>
+</body>
+</html></div>
