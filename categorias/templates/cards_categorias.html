@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-4">
+        <h1 class="text-center mb-4 display-5 fw-normal">Categorías</h1>
+        <div id="categorias" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"></div>
+    </div>
+
+    <script>
+        function cargarCategorias(){
+            fetch('/categorias/json')
+            .then(response => response.json())
+            .then(data => {
+                let div = document.getElementById('categorias');
+                div.innerHTML = '';
+                data.forEach(categoria => {
+                    div.innerHTML += `
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="card-title">${categoria.nombre}</h5>
+                            </div>
+                            <img src="${categoria.imagen}" class="card-img-top" alt="${categoria.nombre}">
+                        </div>
+                    </div>
+                    `
+                });
+            })
+            .catch(error => console.error('Error:', error))
+        }
+
+        cargarCategorias();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
